@@ -4,7 +4,30 @@ body {
   color: white;
 }
 
-/* .App-link {
-  color: #61dafb;
-} */
-
+button{
+  background-color: #61dafb !important;
+}
+.container{
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.friends-list{
+  display: flex;  
+  justify-content: space-between;
+  flex-direction: row;
+}
+.friends-list:hover{
+  background-color: #61dafb51;
+}
+.friends-testimonial{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.add-friends__container{
+  display: flex;
+  flex-direction: column;
+  background-color: #61dafb51;
+}
