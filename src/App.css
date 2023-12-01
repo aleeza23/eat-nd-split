@@ -18,6 +18,9 @@ button{
   justify-content: space-between;
   flex-direction: row;
 }
+.active{
+  background-color: #61dafb51;
+}
 .friends-list:hover{
   background-color: #61dafb51;
 }
@@ -29,5 +32,12 @@ button{
 .add-friends__container{
   display: flex;
   flex-direction: column;
+  background-color: #61dafb51;
+}
+.group-inputs{
+  display: flex;
+  justify-content: space-between;
+}
+.split-bill__container{
   background-color: #61dafb51;
 }

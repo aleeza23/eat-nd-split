@@ -1,9 +1,9 @@
 import React from "react";
 
 const Button = ({children, className,onClick}) => {
-  const classes = `rounded border-0 ${className}`
+  const classes = `rounded fw-bold border-0 ${className}`
   return <>
-    <button onClick={onClick} className={classes}>{children}</button>
+    <button onClick={onClick} className={classes}>{children} </button>
   </>;
 };
 
