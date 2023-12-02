@@ -57,6 +57,7 @@ const Main = () => {
           : currElm
       )
     );
+    setcurrentFriend(null)
     // console.log(value);
   };
 
