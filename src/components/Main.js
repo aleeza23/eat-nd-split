@@ -14,13 +14,13 @@ const initialData = [
   {
     id: 13,
     name: "Sarah",
-    balance: 0,
+    balance: -7,
     img: "https://i.pravatar.cc/48?u=933372",
   },
   {
     id: 14,
     name: "Smith",
-    balance: 0,
+    balance: 20,
     img: "https://i.pravatar.cc/48?u=499476",
   },
 ];
@@ -41,9 +41,23 @@ const Main = () => {
     setshowAddFriends(false);
   };
 
-  //handle current friend  
+  //handle current friend
   const handleCurrentFriend = (currentFriend) => {
-    setcurrentFriend(currentFriend);
+    setcurrentFriend((prev) =>
+      prev?.id === currentFriend?.id ? null : currentFriend
+    );
+  };
+
+  //get updated current friend
+  const getUpdatedFriend = (value) => {
+    setfriends((prev) =>
+      prev.map((currElm) =>
+        currElm.id === currentFriend.id
+          ? {...currElm, balance: currElm.balance + value}
+          : currElm
+      )
+    );
+    // console.log(value);
   };
 
   return (
@@ -51,7 +65,11 @@ const Main = () => {
       <div className='container '>
         <div className='row g-3  '>
           <div className='col-12 col-lg-6'>
-            <Friends friends={friends} onCurrentFriend={handleCurrentFriend} currentFriend={currentFriend} />
+            <Friends
+              friends={friends}
+              onCurrentFriend={handleCurrentFriend}
+              currentFriend={currentFriend}
+            />
             {showAddFriends && <AddFriends onAddFriends={handleAddFriends} />}
             <Button
               className='float-end mt-3 py-2 px-2 mx-0 mx-lg-5 fw-bold'
@@ -64,7 +82,12 @@ const Main = () => {
           <div className='col-12 col-lg-6'>
             <div className='row'>
               <div className='col-12'>
-               {currentFriend && <SplitBill currentFriend={currentFriend} /> } 
+                {currentFriend && (
+                  <SplitBill
+                    onUpdateFriend={getUpdatedFriend}
+                    currentFriend={currentFriend}
+                  />
+                )}
               </div>
             </div>
           </div>

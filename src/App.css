@@ -17,6 +17,7 @@ button{
   display: flex;  
   justify-content: space-between;
   flex-direction: row;
+  align-items: center;
 }
 .active{
   background-color: #61dafb51;

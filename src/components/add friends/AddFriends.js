@@ -9,7 +9,7 @@ const AddFriends = ({onAddFriends}) => {
     const handleAddFriends = () => {
    
         if (!name ) return;
-        const newFriends = { name , img : `${img}?u=${id}` , balance : 10 , id}
+        const newFriends = { name , img : `${img}?u=${id}` , balance : 0 , id}
         // console.log(newFriends);
         onAddFriends(newFriends)
         setname('')
@@ -18,10 +18,10 @@ const AddFriends = ({onAddFriends}) => {
   return <>
     <div className="add-friends__container p-4 mt-3 rounded mx-0 mx-lg-5">
    
-        <label>👩🏼‍🤝‍👩🏻Friend Name</label>
+        <label>👩🏼‍🤝‍👩🏻 Friend Name</label>
         <input type="text" value={name} onChange={(e) => setname(e.target.value)}/>
 
-        <label className="mt-2">🌄Img URL</label>
+        <label className="mt-2">🌄 Img URL</label>
         <input type="text" value={img} disabled onChange={(e) => setimg(e.target.value)} />
 
         <Button className="mt-3 text-dark fw-bold" onClick={handleAddFriends}>Add</Button>
