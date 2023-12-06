@@ -87,6 +87,7 @@ const Main = () => {
                   <SplitBill
                     onUpdateFriend={getUpdatedFriend}
                     currentFriend={currentFriend}
+                    key={currentFriend.id}
                   />
                 )}
               </div>

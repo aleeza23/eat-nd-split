@@ -12,7 +12,7 @@ const SplitBill = ({currentFriend, onUpdateFriend}) => {
 
   const handleSplitBill = () => {
     //check who is paying bill
-    const checkingUser = whoIsPaying === "you" ? friendExpense : -friendExpense;
+    const checkingUser = whoIsPaying === "you" ? friendExpense : -yourExpense;
     //  console.log(checkingUser);
     onUpdateFriend(checkingUser);
   };
